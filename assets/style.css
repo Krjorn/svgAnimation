@@ -1,0 +1,120 @@
+:root {
+    --background: #FFEAD4;
+    --branco: #FFFFFF;
+    --cor-primaria: #BE253F;
+    --cor-secundaria: #484848;
+    --fonte-primaria: 'Pacifico', cursive;
+    --fonte-secundaria: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    overflow-x: hidden;
+}
+
+.container-header {
+    width: 100vw;
+}
+
+.lett-header {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 8%;
+    width: 80%;
+    fill: transparent;
+    animation: lett-filling .5s ease-in-out forwards 3s;
+}
+
+.lett-header path {
+    stroke-width: 2px;
+    stroke: var(--cor-primaria);
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    animation: stroke-filling 5s ease-in-out forwards 1s;
+}
+
+h1, h2 {
+    font-family: var(--fonte-primaria);
+    color: var(--cor-primaria);
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+p {
+    font-family: var(--fonte-secundaria);
+    font-size: 1em;
+    color: var(--cor-secundaria);
+}
+
+.container-cards {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.card {
+    background-color: var(--branco);
+    border-radius: 10px;
+    width: 50%;
+    padding: 20px;
+    margin: 20px;
+    transition: .5s ease-out;
+}
+
+.container-footer {
+    position: relative;
+}
+
+.lett-footer {
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    margin-top: 20%;
+    fill: var(--branco);
+    opacity: 0.8;
+}
+
+.footer-infos {
+    text-align: center;
+}
+
+@keyframes lett-filling {
+    to {
+        fill: var(--cor-primaria);
+    }
+}
+
+@keyframes stroke-filling {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.25em;
+    }
+
+    .container-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
